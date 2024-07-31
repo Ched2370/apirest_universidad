@@ -6,9 +6,8 @@ route.get('/', estudianteController.consultar);
 route.post('/', estudianteController.insertar);
 
 route.route('/:id')
-  .put('/', estudianteController.modifica)
-  .delete('/', estudianteController.Borra)
-  .get('/', estudianteController.consultarUno);
-
+  .put(estudianteController.modifica)
+  .delete(estudianteController.Borra)
+  .get(estudianteController.consultarUno);
 
 module.exports = route;
