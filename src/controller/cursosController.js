@@ -4,10 +4,10 @@ class CursoController{
   constructor(){};
 
   insertar(req, res){
-    const {nombre, description} = req.body;
+    const {nombre, descripcion} = req.body;
     try {
-      db.query(`INSERT INTO cursos(id, nombre, description) 
-        VALUES (NULL, ?, ?)`, [nombre, description], (err, rows) => {
+      db.query(`INSERT INTO cursos(id, nombre, descripcion) 
+        VALUES (NULL, ?, ?)`, [nombre, descripcion], (err, rows) => {
         if (err) {
           res.status(400)
         } else {
@@ -21,9 +21,9 @@ class CursoController{
   
   modifica(req, res){
     const {id}=req.params;
-    const {nombre, description, profesor_id}=req.body;
+    const {nombre, descripcion, profesor_id}=req.body;
     try {
-      db.query('UPDATE cursos SET nombre=?, description=?, profesor_id=? WHERE id=?', [nombre, description, profesor_id, id], (err, rows) => {
+      db.query('UPDATE cursos SET nombre=?, descripcion=?, profesor_id=? WHERE id=?', [nombre, descripcion, profesor_id, id], (err, rows) => {
         if (err) {
           res.status(400)
         } else {
